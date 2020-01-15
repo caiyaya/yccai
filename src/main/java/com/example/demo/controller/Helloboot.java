@@ -9,4 +9,11 @@ public class Helloboot {
     public String abc(){
         return "你好，你已经搭好了Spring Boot";
     }
+
+    public static void main(String[] args) {
+        String s = null;
+        String a = s.toString();
+        System.out.println(a);
+    }
 }
+
