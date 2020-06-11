@@ -1,4 +1,4 @@
-package com.example.demo.util;
+package com.server.web.util;
 
 import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
 import org.springframework.context.annotation.Bean;

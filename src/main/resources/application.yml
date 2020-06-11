@@ -1,0 +1,14 @@
+# 服务器端口
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+# 数据库设置
+spring:
+  datasource:
+    #1.JDBC
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cai?serverTimezone=UTC&characterEncoding=utf-8
+    username: root
+    password: root
