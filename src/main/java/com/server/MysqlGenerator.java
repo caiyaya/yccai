@@ -16,7 +16,7 @@ import java.util.Scanner;
 
 
 /**
- * 用mybaties-plus生成对应的类
+ * 代码生成器
  */
 public class MysqlGenerator {
 

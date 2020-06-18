@@ -1,5 +1,6 @@
 package com.server.web.entity.dto;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -79,5 +80,10 @@ public class CourseBase implements Serializable {
      */
     private String userId;
 
+    @ApiModelProperty("页码")
+    private Integer pageNum;
+
+    @ApiModelProperty("每页数量")
+    private Integer pageSize;
 
 }

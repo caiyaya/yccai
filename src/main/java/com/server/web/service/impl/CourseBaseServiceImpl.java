@@ -1,6 +1,7 @@
 package com.server.web.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.github.pagehelper.PageHelper;
 import com.server.web.entity.dto.CourseBase;
 import com.server.web.mapper.CourseBaseMapper;
 import com.server.web.service.CourseBaseService;
@@ -26,6 +27,7 @@ public class CourseBaseServiceImpl implements CourseBaseService {
 //                .and(phone -> phone.like(VcsWorkSheet::getPhone, request.getPhoneOrLeftMsg()))
 //                .or()
 //                .and(leftMsg -> leftMsg.like(VcsWorkSheet::getLeftMsg, request.getPhoneOrLeftMsg()));
+        PageHelper.startPage(request.getPageNum(), request.getPageSize());
         List<CourseBase> courseBase = courseBaseMapper.selectList(queryWrapper);
         return courseBase;
     }

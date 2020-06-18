@@ -20,19 +20,13 @@ import java.util.List;
 
 import static springfox.documentation.builders.RequestHandlerSelectors.basePackage;
 
+/**
+ * swagger-bootstrap-ui
+ */
 @Configuration
 @EnableSwagger2
 @EnableSwaggerBootstrapUI
 public class SwaggerConfiguration {
-//    @Bean
-//    public Docket createRestApi() {
-//        return new Docket(DocumentationType.SWAGGER_2)
-//                .apiInfo(apiInfo())
-//                .select()
-//                .apis(RequestHandlerSelectors.basePackage("com.bycdao.cloud"))
-//                .paths(PathSelectors.any())
-//                .build();
-//    }
 
     @Bean
     public Docket createRestApi() {
@@ -45,7 +39,6 @@ public class SwaggerConfiguration {
         return new Docket(DocumentationType.SWAGGER_2)
                 .pathMapping("/")
                 .select()
-//                .apis(basePackage("komorebi.web.system.controller"))
                 .apis(basePackage("com.server"))
                 .paths(PathSelectors.any())
                 .build()
