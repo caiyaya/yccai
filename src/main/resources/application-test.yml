@@ -5,6 +5,10 @@ server:
     context-path: /api
 # 数据库设置
 spring:
+  data:
+    mongodb:
+      uri:  mongodb://root:123@localhost:27017
+      database: xc_cms
   datasource:
     #1.JDBC
     type: com.alibaba.druid.pool.DruidDataSource
@@ -46,3 +50,7 @@ pagehelper:
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql
+
+fdfs:
+  tracker-list: 192.168.25.133:22122
+  httpurl: http://192.168.25.133/

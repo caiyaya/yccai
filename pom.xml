@@ -205,7 +205,11 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatis-plus.version}</version>
         </dependency>
-
+        <!-- mongodb -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper-spring-boot-starter</artifactId>
@@ -236,6 +240,11 @@
             <artifactId>mybatis-plus-generator</artifactId>
             <version>${mybatis-plus.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>5.2.1.RELEASE</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -247,7 +256,7 @@
                 <filtering>true</filtering>
                 <excludes>
                     <!-- 打包时排除文件，可自行添加test.yml -->
-                    <exclude>application.yml</exclude>
+<!--                    <exclude>application.yml</exclude>-->
                     <exclude>application-dev.yml</exclude>
                     <exclude>application-test.yml</exclude>
                     <exclude>application-prod.yml</exclude>

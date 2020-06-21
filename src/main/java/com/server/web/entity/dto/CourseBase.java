@@ -80,10 +80,10 @@ public class CourseBase implements Serializable {
      */
     private String userId;
 
-    @ApiModelProperty("页码")
-    private Integer pageNum;
-
-    @ApiModelProperty("每页数量")
-    private Integer pageSize;
+//    @ApiModelProperty("页码")
+//    private Integer pageNum;
+//
+//    @ApiModelProperty("每页数量")
+//    private Integer pageSize;
 
 }
