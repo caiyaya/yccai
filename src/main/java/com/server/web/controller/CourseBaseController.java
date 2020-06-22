@@ -48,6 +48,9 @@ public class CourseBaseController {
         return ResultMap.success(courseBaseDTO);
     }
 
+    /**
+     * fastdfs,mongodb
+     */
     @ApiOperation("文件上传接口")
     @PostMapping("/upload")
     public ResultMap uploadFile(MultipartFile file) throws IOException {
