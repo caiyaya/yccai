@@ -1,6 +1,6 @@
 package com.server.thread.communication.farmerchild;
 
-public class Child extends Thread {
+public class Child extends  Thread{
     public void run() {
         while (true) {
             synchronized (Kuang.kuang) {
