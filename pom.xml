@@ -18,7 +18,7 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- 单元测试 -->
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <contiperf.version>2.3.4</contiperf.version>
         <!-- commons -->
         <hutool.version>5.0.7</hutool.version>
