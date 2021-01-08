@@ -1,19 +1,14 @@
 package com.server.common.util;
 
-import java.io.BufferedOutputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Base64Utils;
 import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 @Service
 public class FileUtils {
@@ -154,5 +149,33 @@ public class FileUtils {
         org.apache.commons.io.FileUtils.writeByteArrayToFile(new File(filePath), bs);
         
         return true;
+	}
+
+	/**
+	 *  下载服务器上某个路径下的文件
+	 *  待下载的文件与项目同属一个服务器
+	 * @param path 待下载文件全路径，包括文件名及扩展名
+	 */
+	public void download(String path) {
+		try {
+			HttpServletResponse response = null;
+			// path是指欲下载的文件的路径。
+			File file = new File(path);
+			// 取得文件名。
+//			String filename = file.getName();
+			// 取得文件的后缀名。
+//			String ext = filename.substring(filename.lastIndexOf(".") + 1).toUpperCase();
+			// 以流的形式下载文件。
+			InputStream fis = new BufferedInputStream(new FileInputStream(path));
+			byte[] buffer = new byte[fis.available()];
+			fis.read(buffer);
+			fis.close();
+			FileOutputStream toClient = new FileOutputStream(path);
+			toClient.write(buffer);
+			toClient.flush();
+			toClient.close();
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
 	}
 }
