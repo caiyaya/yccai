@@ -22,6 +22,12 @@ public class MybatisPlusTest {
     private CourseBaseMapper courseBaseMapper;
 
     @Test
+    public void selectByIdTest() {
+        CourseBase courseBase = courseBaseMapper.selectById("297e7c7c62b888f00162b8a7dec20000");
+        System.out.println(courseBase);
+    }
+
+    @Test
     public void selectTest() {
         QueryWrapper<CourseBase> queryWrapper = new QueryWrapper<>();
         List<CourseBase> courseBase = courseBaseMapper.selectList(queryWrapper);

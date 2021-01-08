@@ -5,11 +5,10 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -20,6 +19,15 @@ public class DateTest {
         boolean lastDays = getLastDays(3);
         System.out.println(lastDays);
     }
+    @Test
+    public void test1() throws ParseException {
+        String s = "2020-11";
+        SimpleDateFormat df = new SimpleDateFormat("yyyyMM");
+        Date parse = df.parse(s);
+        String format = df.format(parse);
+        System.out.println(format);
+    }
+
 
     private static boolean getLastDays(int days) {
         boolean flag = false;

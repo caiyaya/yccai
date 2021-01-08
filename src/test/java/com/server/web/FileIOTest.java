@@ -16,7 +16,7 @@ public class FileIOTest {
 
 
     @Test
-    public void test() throws Exception {
+    public void test1() throws Exception {
         String encoding = "utf-8";
         String filePath = "E:/test.txt";
         File file = new File(filePath);
@@ -39,7 +39,7 @@ public class FileIOTest {
      * 逐行读取txt文件并写入到list实体类中
      */
     @Test
-    public void readTxt() throws IOException {
+    public void test2() throws IOException {
         String paths = "E:/test.txt";
         InputStreamReader isr = new InputStreamReader(new FileInputStream(paths), "utf-8");
         BufferedReader br = new BufferedReader(isr);
@@ -60,6 +60,11 @@ public class FileIOTest {
         System.out.println(list);
         System.out.println("读取总条数：" + count + "||读取的list的长度" + list.size());
         isr.close();
+    }
+
+    @Test
+    public void test3() throws Exception {
+        OutputStream os = new FileOutputStream("test.txt");
     }
 
     @Data

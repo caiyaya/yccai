@@ -52,6 +52,7 @@ public class MysqlGenerator {
         gc.setOutputDir(projectPath + "/src/main/java");
         gc.setAuthor("huanghua");
         gc.setOpen(false);
+//        gc.setIdType(IdType.ASSIGN_UUID);  //主键策略UUID
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
@@ -91,7 +92,7 @@ public class MysqlGenerator {
 
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setNaming(NamingStrategy.underline_to_camel);
+        strategy.setNaming(NamingStrategy.underline_to_camel);//下划线到驼峰的命名方式
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
 //        strategy.setSuperEntityClass("");
         strategy.setEntityLombokModel(true);

@@ -20,70 +20,41 @@ public class CourseBase implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /**
-     * id
-     */
+    @ApiModelProperty("id")
     private String id;
 
-    /**
-     * 课程名称
-     */
+    @ApiModelProperty("课程名称")
     private String name;
 
-    /**
-     * 适用人群
-     */
+    @ApiModelProperty("适用人群")
     private String users;
 
-    /**
-     * 课程大分类
-     */
+    @ApiModelProperty("课程大分类")
     private String mt;
 
-    /**
-     * 课程等级
-     */
+    @ApiModelProperty("课程等级")
     private String grade;
 
-    /**
-     * 学习模式
-     */
+    @ApiModelProperty("学习模式")
     private String studymodel;
 
-    /**
-     * 授课模式
-     */
+    @ApiModelProperty("授课模式")
     private String teachmode;
 
-    /**
-     * 课程介绍
-     */
+    @ApiModelProperty("课程介绍")
     private String description;
 
-    /**
-     * 课程小分类
-     */
+    @ApiModelProperty("课程小分类")
     private String st;
 
-    /**
-     * 课程状态
-     */
+    @ApiModelProperty("课程小分类")
     private String status;
 
-    /**
-     * 教育机构
-     */
+    @ApiModelProperty("教育机构")
     private String companyId;
 
-    /**
-     * 创建用户
-     */
+    @ApiModelProperty("创建用户")
     private String userId;
 
-//    @ApiModelProperty("页码")
-//    private Integer pageNum;
-//
-//    @ApiModelProperty("每页数量")
-//    private Integer pageSize;
 
 }
