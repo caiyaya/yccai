@@ -9,8 +9,14 @@ import com.server.web.mapper.FileSystemRepository;
 import com.server.web.service.CourseBaseService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.http.entity.ContentType;
+import org.apache.poi.hwpf.HWPFDocument;
+import org.apache.poi.hwpf.usermodel.Range;
+import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,8 +24,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
-import java.io.IOException;
-import java.util.List;
+import java.io.*;
+import java.util.*;
 
 /**
  * mybatis-plus
@@ -73,4 +79,17 @@ public class CourseBaseController {
         fastDFSClient.deleteFile(url);
         return ResultMap.success();
     }
+
+    public static void main(String[] args) throws IOException {
+
+    }
+
+    public static void function_1(File file) {
+        File[] fileArr = file.listFiles(); // 获取目录下的所有文件或文件夹的全路径(File类型)。 (目录遍历,不会递归遍历)  File[]类型
+        for (File f : fileArr) {
+            System.out.println(f); // c:\a.txt (全路径)
+        }
+    }
+
+
 }

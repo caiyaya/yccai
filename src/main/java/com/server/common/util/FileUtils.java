@@ -1,5 +1,6 @@
 package com.server.common.util;
 
+import org.apache.http.entity.ContentType;
 import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.springframework.mock.web.MockMultipartFile;
@@ -194,5 +195,24 @@ public class FileUtils {
         }
         return text;
     }
+
+    /**
+     * File类型转MultipartFile类型
+     *
+     * @param path
+     * @return
+     * @throws FileNotFoundException
+     */
+    public static MultipartFile fileToMultipartFile(String path) throws IOException {
+//        String path = "D:\\fdd\\v1.6\\法律条款\\地方性法规\\《湖南省实施《中华人民共和国种子法》办法》_湖南省人民代表大会常务委员会_地方性法规_有效_[2019-09-28]_2019-12-01.docx";
+        File file = new File(path);
+        FileInputStream fileInputStream = new FileInputStream(file);
+        // MockMultipartFile(String name, @Nullable String originalFilename, @Nullable String contentType, InputStream contentStream)
+        // 其中originalFilename,String contentType 旧名字，类型  可为空
+        // ContentType.APPLICATION_OCTET_STREAM.toString() 需要使用HttpClient的包
+        MultipartFile multipartFile = new MockMultipartFile("copy" + file.getName(), file.getName(), ContentType.APPLICATION_OCTET_STREAM.toString(), fileInputStream);
+        return multipartFile;
+    }
+
 
 }
