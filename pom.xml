@@ -258,6 +258,12 @@
             <artifactId>spring-test</artifactId>
             <version>5.2.1.RELEASE</version>
         </dependency>
+        <!-- feign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>2.2.6.RELEASE</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -269,7 +275,7 @@
                 <filtering>true</filtering>
                 <excludes>
                     <!-- 打包时排除文件，可自行添加test.yml -->
-<!--                    <exclude>application.yml</exclude>-->
+                    <!--                    <exclude>application.yml</exclude>-->
                     <exclude>application-dev.yml</exclude>
                     <exclude>application-test.yml</exclude>
                     <exclude>application-prod.yml</exclude>

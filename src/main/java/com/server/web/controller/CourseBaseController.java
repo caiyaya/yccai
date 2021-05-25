@@ -48,7 +48,7 @@ public class CourseBaseController {
     private String fastDFSHttpurl;
 
     @ApiOperation("查询列表接口")
-    @PostMapping("/course-list")
+    @PostMapping("/selectCourseList")
     public ResultMap selectCourseList(@Valid @RequestBody CourseBase request) {
         List<CourseBase> courseBaseDTO = courseBaseService.selectCourseList(request);
         return ResultMap.success(courseBaseDTO);
@@ -78,10 +78,6 @@ public class CourseBaseController {
     public ResultMap deleteFile(@RequestBody String url) throws IOException {
         fastDFSClient.deleteFile(url);
         return ResultMap.success();
-    }
-
-    public static void main(String[] args) throws IOException {
-
     }
 
     public static void function_1(File file) {

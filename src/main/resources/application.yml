@@ -54,3 +54,5 @@ pagehelper:
 fdfs:
   tracker-list: 192.168.25.133:22122
   httpurl: http://192.168.25.133/
+
+COURSE_BASE_URL: localhost:8080
